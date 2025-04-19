@@ -12,9 +12,9 @@ A Python application that generates a web page with information about animals us
 ## Requirements
 
 - Python 3.x
-- Required packages:
+- Required packages (install using requirements.txt):
   ```bash
-  pip install requests python-dotenv
+  pip install -r requirements.txt
   ```
 
 ## Setup
@@ -22,7 +22,7 @@ A Python application that generates a web page with information about animals us
 1. Clone this repository
 2. Install the required dependencies:
    ```bash
-   pip install requests python-dotenv
+   pip install -r requirements.txt
    ```
 3. Create a `.env` file in the root directory with your API key:
    ```
@@ -45,6 +45,7 @@ A Python application that generates a web page with information about animals us
 - `animals_template.html` - HTML template for the generated page
 - `animals.html` - Generated HTML file (created when running the script)
 - `.env` - Environment variables file (not tracked by git)
+- `requirements.txt` - List of required Python packages
 
 ## Note
 
