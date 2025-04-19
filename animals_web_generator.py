@@ -1,17 +1,6 @@
 import json
-import requests
 import os
-
-
-def get_animal_data(animal_name):
-    """Fetches animal data from the API Ninjas Animals API."""
-    api_url = f'https://api.api-ninjas.com/v1/animals?name={animal_name}'
-    response = requests.get(api_url, headers={'X-Api-Key': 'XL3dO8k9/+HKpwX1qvA4zg==CHisXjRa9dlCb83o'})
-    
-    if response.status_code == requests.codes.ok:
-        return response.json()
-    else:
-        return None
+import data_fetcher
 
 
 def serialize_animal(animal_obj):
@@ -42,7 +31,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     animal_name = input("Enter a name of an animal: ")
-    animals_data = get_animal_data(animal_name)
+    animals_data = data_fetcher.fetch_data(animal_name)
 
     # Use the correct path to the template file
     template_path = os.path.join(script_dir, "animals_template.html")
